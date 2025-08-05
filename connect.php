@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 $host = "localhost";
 $user = "root";
@@ -11,5 +13,5 @@ if (mysqli_connect_errno()) {
     echo "การเชื่อมต่อผิดพลาด" . mysqli_connect_error();
     exit();
 } else {
-    echo "เชื่อมได้ละ";
+//    echo "เชื่อมได้ละ";
 }
